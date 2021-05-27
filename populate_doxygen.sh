@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ $# -ne 1 -o ! -f $1/doc/libgetdns.3 -o ! -f $1/src/Doxyfile ]
+if [ $# -ne 1 -o ! -f $1/man3/libgetdns.3 -o ! -f $1/src/Doxyfile ]
 then
 	echo "usage: $0 <getdns src with make doc done>"
 	exit
@@ -8,7 +8,7 @@ fi
 
 TEMPLATESDIR=`lektor project-info --output-path`/doxygen-templates
 DOXYCONFIG=`mktemp`
-PROJECT_NUMBER=`grep ^PROJECT_NUMBER $1/src/Doxyfile|sed 's/^[^=]*=[ 	]*//g'`
+PROJECT_NUMBER=`grep ^PROJECT_NUMBER $1/Doxyfile|sed 's/^[^=]*=[ 	]*//g'`
 echo $DOXYCONFIG
 (
 	egrep -v '^HTML_HEADER|^HTML_FOOTER|^HTML_EXTRA_FILES|OUTPUT_DIRECTORY|GENERATE_LATEX|GENERATE_MAN' $1/src/Doxyfile

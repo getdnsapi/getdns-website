@@ -27,7 +27,7 @@ if __name__ == '__main__':
 			os.mkdir('content/functions/%s' % name)
 		except OSError:
 			pass
-		with file('content/functions/%s/contents.lr' % name, 'w') as f:
+		with open('content/functions/%s/contents.lr' % name, 'w') as f:
 			f.write("""_model: link
 ---
 _slug: %s.html

@@ -1,12 +1,14 @@
-version: 1.6.1-rc.1
+version: 1.7.0-rc.1
 ---
-title: First release candidate for getdns-1.6.1
+title: First release candidate for getdns-1.7.0
 ---
 announcement:
 
 Dear all,
 
-We have a first candidate for the 1.6.1 release of getdns.
+We have a first candidate for the 1.7.0 release of getdns.
+
+Here is a reference to a new function: [`getdns_context_set_tcp_send_timeout()`]
 
 This release has a [Stubby] version 0.4.0-rc.1 included.
 
@@ -24,6 +26,8 @@ Please review these release candidates carefully, if all is well, the actual rel
 [`getdns_context_set_trust_anchors_backoff_time()`]: /functions/getdns_context_set_trust_anchors_backoff_time.html
 [zero configuration DNSSEC]: /releases/getdns-1-2-0/#zero-configuration-dnssec
 [logging system]: /functions/getdns_context_set_logfunc.html
+[`getdns_context_set_tcp_send_timeout()`]: /functions/getdns_context_set_tcp_send_timeout.html
+[`getdns_context_get_tcp_send_timeout()`]: /functions/getdns_context_get_tcp_send_timeout.html
 ---
 _discoverable: yes
 ---
@@ -35,32 +39,42 @@ image: lab-pic-6_edit_800x_55q.jpg
 ---
 changelog:
 
-* 2021-05-28: Version 1.6.1-rc.1
+* 2021-06-??: Version 1.7.0
   * Make TLS Handshake timeout max 4/5th of timeout for the query,
     just like connection setup timeout was, so fallback transport
     have a chance too when TCP connection setup is less well
     detectable (as with TCP_FASTOPEN on MacOS).
   * Issue #466: Memory leak with retrying queries (for examples
     with search paths). Thanks doublez13.
-  * Issue #480: Cross compiling is broken with CMake
+  * Issue #480: Handling of strptime when Cross compiling with CMake.
+    A new option to FORCE_COMPAT_STRPTIME (default disabled) will
+    (when disabled) make cmake assume the target platform has a POSIX
+    compatible strptime when cross-compiling.
   * Setting of the number of milliseconds send data may remain
     unacknowledged by the peer in a TCP connection (when supported 
     by the OS) with getdns_context_set_tcp_send_timeout()
     Thanks maciejsszmigiero.
   * Issue #497: Fix typo in CMAKE included files, so Stubby can use
     TLS v1.3 with chipersuites options ON. Thanks har-riz.
-
+  * Basic name compression on server replied messages. Thanks amialkow!
+    This alleviates (but might not completely resolve) issues #495 and
+    #320 .
+  * Eventloop extensions back to the old names libgetdns_ext_event,
+    libgetdns_ext_ev and libgetdns_ext_uv.
 ---
 stubbychangelog:
 
-* 2021-05-28: Version 0.4.0-rc1
+* 2021-06-??: Version 0.4.0
+  * We announce the intention to remove the dnsovertls*.sinodun.com 
+    servers from the default resolver list in the next release,
+    see https://github.com/getdnsapi/stubby/issues/286 for details.
   * Add ability to run Stubby as a full Windows service
   * Update IPs for dot1.applied-privacy.net
   * Remove the secure.eu entries in the stubby config file
   * Bugfix: Make `run_in_foreground = 1` the default again
   * Support yaml config files that do not use quotes
 ---
-sha256: d6075515059289319ec269608badb9abc98ddce55520e54ea0bdd696f95d8883
+sha256: 2a0cd9915c239b732500e35d41faea6bbaf633fbfbc6ce81d32f3741b2bee63d
 ---
 tags: 
 ---

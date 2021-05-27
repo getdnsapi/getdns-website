@@ -1,0 +1,7 @@
+_model: link
+---
+_slug: getdns_context_set_tcp_send_timeout.html
+---
+title: getdns_return_t getdns_context_set_tcp_send_timeout(getdns_context *context, uint32_t value)
+---
+link: /doxygen/group__getdns__context.html#gae1af24f7ded979b54a31da150918abf4

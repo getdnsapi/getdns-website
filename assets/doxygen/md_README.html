@@ -1,0 +1,475 @@
+
+<!-- HTML header for doxygen 1.8.13-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: getdns</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link rel="shortcut icon" type="image/x-icon" href="../../static/favicon.ico?h=e9ddf61d">
+<!-- Generated CSS, including Bootstrap -->
+<link rel="stylesheet" href="../../static/gen/styles.css?h=ca2f97c2">
+<!-- Other things -->
+<link rel="stylesheet" href="../../static/pygments.css">
+<script type="text/javascript" src="jquery.js"></script> 
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="../../doxygen/customdoxygen.css?h=34171e15">
+</head>
+<body>
+<!--#if expr="true" --><!--#include virtual="/doxygen-templates/navbar.html" --><!--#else -->
+<nav class="navbar navbar-fixed-top navbar-default" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#top-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../"><img height="64" src="../../static/logo.svg" alt="getdns API"></a>
+    </div><!-- class="navbar-header" -->
+    <div id="top-navbar" class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+          <li class="nav-item dropdown ">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="../../quick-start/">Quick Start<span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li class="nav-item ">
+                  <a class="nav-link" href="../../quick-start/cmake-quick-start/">cmake Quick Start</a>
+              </li>
+              <li class="nav-item ">
+                  <a class="nav-link" href="/blog/categories/basic">Basic examples</a>
+              </li>
+              <li class="nav-item ">
+                  <a class="nav-link" href="https://dnsprivacy.org/wiki/x/JYAT">Stubby</a>
+              </li>
+              <li class="nav-item ">
+                  <a class="nav-link" href="/blog/getdns_query">getdns_query</a>
+              </li>
+              <li class="nav-item ">
+                  <a class="nav-link" href="/blog/json-pointers">Enhanced getdns data access</a>
+              </li>
+              <li class="nav-item ">
+                  <a class="nav-link" href="/query/">Do a Query</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown ">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="../../documentation/">Documentation<span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li class="nav-item ">
+                  <a class="nav-link" href="../../documentation/readme/">Readme</a>
+              </li>
+              <li class="nav-item ">
+                  <a class="nav-link" href="../../documentation/spec/">API Specification</a>
+              </li>
+              <li class="nav-item ">
+                  <a class="nav-link" href="../../documentation/manpages/">Manpages</a>
+              </li>
+              <li class="nav-item ">
+                  <a class="nav-link" href="/doxygen/">Doxygen documentation</a>
+              </li>
+              <li class="nav-item ">
+                  <a class="nav-link" href="https://getdns.readthedocs.org/">Python documentation</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="../../presentations/">Presentations</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="../../releases/">Releases</a>
+          </li>
+    </ul>
+    </div><!-- class="navbar-collapse collapse" -->
+  </div><!-- class="container" -->
+</nav><!-- class="navbar navbar-fixed-top navbar-inverse" role="navigation" -->
+<!--#endif -->
+  <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+    <div class="content" id="content">
+     <div class="container">
+        <div class="row">
+          <div class="col-sm-12 panel " style="padding-bottom: 15px;">
+            <div style="margin-bottom: 15px;">
+<!-- end header part -->
+<!-- Generated by Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="PageDoc"><div class="header">
+  <div class="headertitle">
+<div class="title">getdns </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><h1><a class="anchor" id="autotoc_md0"></a>
+Overview of getdns</h1>
+<ul>
+<li>GitHub: <a href="https://github.com/getdnsapi/getdns">https://github.com/getdnsapi/getdns</a></li>
+</ul>
+<p>getdns is an implementation of a modern asynchronous DNS API; the specification was originally edited by Paul Hoffman. It is intended to make all types of DNS information easily available to application developers and non-DNS experts.</p>
+<h2><a class="anchor" id="autotoc_md1"></a>
+Why you might want getdns</h2>
+<p>Traditional access to DNS data from applications has several limitations:</p>
+<ul>
+<li>APIs require applications to have considerable sophistication about DNS data and data types</li>
+<li>Some kinds of data about the response (notably, the resource record set time to live) is not exposed via any API, so applications need to process raw protocol responses to get such data</li>
+<li>APIs are often blocking, meaning asynchronous access is not possible without some work</li>
+<li>Sophisticated uses of the DNS (things like IDNA and DNSSEC validation) require considerable application work, possibly by application developers with little experience with the vagaries of DNS.</li>
+</ul>
+<p>getdns also provides an experimental DNS Privacy enabled client called 'stubby' - see below for more details.</p>
+<h2><a class="anchor" id="autotoc_md2"></a>
+Motivation for providing the API</h2>
+<p>The developers are of the opinion that DNSSEC offers a unique global infrastructure for establishing and enhancing cryptographic trust relations. With the development of this API we intend to offer application developers a modern and flexible interface that enables end-to-end trust in the DNS architecture, and which will inspire application developers to implement innovative security solutions in their applications.</p>
+<h3><a class="anchor" id="autotoc_md3"></a>
+API Documentation</h3>
+<p>Note that this implementation offers additional functionality to supplement that in the <a href="https://getdnsapi.net/documentation/spec/">official getdns API</a>. Some additions are convenient utility functions but other functionality is experimental prior to be being recommended for inclusion in the official API. The <a href="https://getdnsapi.net/doxygen/modules.html">Doxygen documentation</a> provides the details of the full API for this implementation.</p>
+<h2><a class="anchor" id="autotoc_md4"></a>
+License</h2>
+<p>This implementation is licensed under the New BSD License (BSD-new).</p>
+<h1><a class="anchor" id="autotoc_md5"></a>
+Obtaining and getting started with getdns</h1>
+<p>The project home page at <a href="https://getdnsapi.net">getdnsapi.net</a> provides documentation, binary downloads, and news regarding the getdns API implementation. This README file captures the goals and direction of the project and the current state of the implementation.</p>
+<p>If you are just getting started with the library take a look at the section below that describes building and handling external dependencies for the library.</p>
+<h3><a class="anchor" id="autotoc_md6"></a>
+Examples</h3>
+<p>Once it is built you should take a look at <code>spec/example</code> to see how the library is used.</p>
+<h1><a class="anchor" id="autotoc_md7"></a>
+Download</h1>
+<p>Download the sources from our <a href="https://github.com/getdnsapi/getdns">github repo</a> or from <a href="https://getdnsapi.net">getdnsapi.net</a> and verify the download using the checksums (SHA1 or MD5) or using gpg to verify the signature. Our keys are available from the <a href="https://keyserver.pgp.com">pgp keyservers</a></p>
+<ul>
+<li><code>willem@nlnetlabs.nl</code>, key id E5F8F8212F77A498</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md8"></a>
+Releases</h1>
+<p>Release numbering follows the <a href="http://semver.org/">Semantic Versioning</a> approach. The code is currently under active development.</p>
+<p>The following requirements were met as conditions for the present release:</p>
+<ul>
+<li>code compiles cleanly on at least the primary target platforms: OSX, Linux (RHEL/CentOS, Ubuntu), FreeBSD</li>
+<li>examples must compile and run cleanly</li>
+<li>there must be clear documentation of supported and unsupported elements of the API</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md9"></a>
+External Dependencies</h1>
+<p>If you are installing from packages, you have to install the library and also the library-devel (or -dev) for your package management system to get the the necessary compile time files.</p>
+<p>External dependencies are linked outside the getdns API build tree (we rely on CMake to find them). We would like to keep the dependency tree short, see <a href="#minimizing-dependancies">Minimising Dependancies</a> for more details.</p>
+<p>Required for all builds:</p>
+<ul>
+<li><a href="https://www.openssl.org/">libssl and libcrypto from the OpenSSL Project</a> version 1.0.2 or later. Using OpenSSL 1.1 is recommended due to TSL 1.3 support.</li>
+</ul>
+<p>Required for all builds that include recursive functionality:</p>
+<ul>
+<li><a href="https://unbound.net/">libunbound from NLnet Labs</a> version 1.5.9 or later. (Note: linking to libunbound is not yet supported on Windows, see <a href="#microsoft-windows-10">Windows 10</a>)</li>
+</ul>
+<p>Required for all builds that include IDN functionality:</p>
+<ul>
+<li><a href="https://www.gnu.org/software/libidn/">libidn2 from the FSF</a> version 2.0.0 and higher.</li>
+</ul>
+<p>Required to build the documentation:</p>
+<ul>
+<li><a href="http://www.doxygen.nl">Doxygen</a> is used to generate documentation; while this is not technically necessary for the build it makes things a lot more pleasant.</li>
+</ul>
+<p>For example, to build on Ubuntu 18.04 or later, you would need the following packages for a full build: </p><pre class="fragment"># apt install build-essential libunbound-dev libidn2-dev libssl-dev cmake
+</pre> <h1><a class="anchor" id="autotoc_md10"></a>
+Building</h1>
+<p>If you are building from git, you need to do the following before building: </p><pre class="fragment"># git submodule update --init
+</pre><p> From release 1.6.0 getdns uses CMake (previous versions used autoconf/libtool). To build from this release and later use: </p><pre class="fragment"># cmake .
+# make
+</pre><p> If you are unfamiliar with CMake, see our <a href="https://getdnsapi.net/quick-start/cmake-quick-start/">CMake Quick Start</a> for how to use CMake options to customise the getdns build.</p>
+<p>As well as building the getdns library two other tools are installed by default:</p>
+<ul>
+<li>getdns_query: a command line test script wrapper for getdns. This can be used to quickly check the functionality of the library, see (#using-getdnsquery)</li>
+<li>getdns_server_mon: test DNS server function and capabilities</li>
+</ul>
+<p>Additionally <code>Stubby</code> a DNS Privacy enabled client can also be built and installed by using the <code>BUILD_STUBBY</code> option when running <code>cmake</code>, see <a href="#stubby">Stubby</a>.</p>
+<h2><a class="anchor" id="autotoc_md11"></a>
+Minimizing dependencies</h2>
+<ul>
+<li>getdns can be configured for stub resolution mode only with the <code>ENABLE_STUB_ONLY</code> option to <code>cmake</code>. This removes the dependency on <code>libunbound</code>.</li>
+<li>Currently getdns only offers two helper functions to deal with IDN: <code>getdns_convert_ulabel_to_alabel</code> and <code>getdns_convert_alabel_to_ulabel</code>. If you do not need these functions, getdns can be configured to compile without them by setting the<code>USE_LIBIDN2</code> option to <code>cmake</code> to OFF.</li>
+<li>When <code>ENABLE_STUB_ONLY</code> is ON, and <code>USE_LIBIDN2</code> is OFF, getdns has only one dependency left, which is OpenSSL.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md12"></a>
+Extensions and Event loop dependencies</h2>
+<p>The implementation works with a variety of event loops, each built as a separate shared library. See <a href="https://getdnsapi.net/doxygen/group__eventloops.html">this Doxygen page</a> and <a href="https://getdnsapi.net/documentation/manpages/#ASYNCHRONOUS USE">this man page</a> for more details.</p>
+<ul>
+<li><a href="http://libevent.org">libevent</a>. Note: the examples <em>require</em> this. libevent 2.x is required.</li>
+<li><a href="https://libuv.org/">libuv</a></li>
+<li><a href="http://software.schmorp.de/pkg/libev.html">libev</a></li>
+</ul>
+<h2><a class="anchor" id="autotoc_md13"></a>
+Using getdns_query</h2>
+<p>Example test queries using <code>getdns_query</code> (pointed at Google Public DNS) and requesting the <code>call_reporting</code> extension which provides information on the transport and query time:</p>
+<p>getdns_query -s example.com A @8.8.8.8 +return_call_reporting (UDP) getdns_query -s example.com A @8.8.8.8 -T +return_call_reporting (TCP) getdns_query -s example.com A @8.8.8.8 -L +return_call_reporting (TLS without authentication) getdns_query -s getdnsapi.net A +dnssec_return_status +return_call_reporting (DNSSEC)</p>
+<h2><a class="anchor" id="autotoc_md14"></a>
+Stubby</h2>
+<ul>
+<li>Stubby is an implementation of a DNS Privacy enabled stub resolver that encrypts DNS queries using TLS. It is currently suitable for advanced/technical users - all feedback is welcome!</li>
+<li>Details on how to use Stubby can be found in the <a href="https://dnsprivacy.org/wiki/x/JYAT">Stubby Reference Guide</a>.</li>
+<li>Also see <a href="https://dnsprivacy.org">dnsprivacy.org</a> for more information on DNS Privacy.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md15"></a>
+Experimental support for GnuTLS</h2>
+<p>A project to allow user selection of either OpenSSL or GnuTLS is currently a work in progress. At present a user may select to use GnuTLS for the majority of the supported functionality, however, OpenSSL is still required for some cryptographic functions.</p>
+<h2><a class="anchor" id="autotoc_md16"></a>
+Regression Tests</h2>
+<p>A suite of regression tests are included with the library, if you make changes or just want to sanity check things on your system take a look at src/test. You will need to install <a href="https://libcheck.github.io/check/">libcheck</a>. The check library is also available from many of the package repositories for the more popular operating systems. Note: The tests currently do not run on Windows because of a dependancy on bash.</p>
+<h2><a class="anchor" id="autotoc_md17"></a>
+DNSSEC dependencies</h2>
+<p>For the library to be DNSSEC capable, it needs to know the root trust anchor. The library will try to load the root trust anchor from <code>/etc/unbound/getdns-root.key</code> by default. This file is expected to have one or more <code>DS</code> or <code>DNSKEY</code> resource records in presentation (i.e. zone file) format. Note that this is different than the format of BIND.keys.</p>
+<h2><a class="anchor" id="autotoc_md18"></a>
+Zero configuration DNSSEC</h2>
+<p>When the root trust anchor is not installed in the default location and a DNSSEC query is done, getdns will try to use the trust anchors published here: <a href="http://data.iana.org/root-anchors/root-anchors.xml">http://data.iana.org/root-anchors/root-anchors.xml</a> . It will validate these anchors with the ICANN Certificate Authority certificate following the procedure described in [RFC7958]. The <code>root-anchors.xml</code> and <code>root-anchors.p7s</code> S/MIME signature will be cached in the <code>$HOME/.getdns</code> directory on Unixes, and the <code>appdata%\getdns</code> directory on Windows.</p>
+<p>When using trust-anchors from the <code>root-anchors.xml</code> file, getdns will track the keys in the root DNSKEY rrset and store a copy in <code>$HOME/.getdns/root.key</code> on Unixes, and <code>appdata%\getdns\root.key</code> on Windows. Only when the KSK DNSKEY's change, a new version of <code>root-anchors.xml</code> is tried to be retrieved from <a href="https://data.iana.org/root-anchors/">data.iana.org</a>.</p>
+<p>A installed trust-anchor from the default location (<code>/etc/unbound/getdns-root.key</code>) that fails to validate the root DNSKEY RRset, will also trigger the "Zero configuration DNSSEC" procedure described above.</p>
+<h1><a class="anchor" id="autotoc_md19"></a>
+Support</h1>
+<h2><a class="anchor" id="autotoc_md20"></a>
+Mailing lists</h2>
+<p>We have a <a href="https://lists.getdnsapi.net/mailman/listinfo/users">getdns users list</a> for this implementation.</p>
+<h2><a class="anchor" id="autotoc_md21"></a>
+Tickets and Bug Reports</h2>
+<p>Tickets and bug reports should be reported via the <a href="https://github.com/getdnsapi/getdns/issues">GitHub issues list</a>.</p>
+<h1><a class="anchor" id="autotoc_md22"></a>
+Features of this release</h1>
+<h2><a class="anchor" id="autotoc_md23"></a>
+Goals</h2>
+<p>The goals of this implementation of the getdns API are:</p>
+<ul>
+<li>Provide an open source implementation, in C, of the formally described getdns API by getdns API team at <a href="https://getdnsapi.net/spec.html">https://getdnsapi.net/spec.html</a></li>
+<li>Support FreeBSD, OSX, Linux (CentOS/RHEL, Ubuntu)</li>
+<li>Support Windows 10</li>
+<li>Include examples and tests as part of the build</li>
+<li>Document code using doxygen</li>
+<li>Leverage github as much as possible for project coordination</li>
+<li>Follow the BSD coding style/standards <a href="ftp://ftp.netbsd.org/pub/NetBSD/NetBSD-current/src/share/misc/style">ftp://ftp.netbsd.org/pub/NetBSD/NetBSD-current/src/share/misc/style</a></li>
+</ul>
+<p>Non-goals (things we will not be doing at least initially) include:</p>
+<ul>
+<li>implementation of the traditional DNS related routines (gethostbyname, etc.)</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md24"></a>
+Language Bindings</h2>
+<p>In parallel, the team is actively developing bindings for various languages. For more information, visit this <a href="https://getdnsapi.net/bindings/">webpage</a>.</p>
+<h2><a class="anchor" id="autotoc_md25"></a>
+Unsupported getDNS Features</h2>
+<p>The following API calls are documented in getDNS but <em>not supported</em> by the implementation at this time:</p>
+<ul>
+<li>Detecting changes to resolv.conf and hosts</li>
+<li>MDNS, NIS and NetBIOS namespaces (only DNS and LOCALFILES are supported)</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md26"></a>
+Minor omissions</h3>
+<p>The following minor implementation omissions are noted:</p>
+<p>Recursive mode does not support:</p><ul>
+<li>TLS as a transport</li>
+<li>Non-zero connection idle timeouts or query pipelining</li>
+<li>Anything other than query_type and resolution_type in the return_call_reporting extension</li>
+</ul>
+<p>Stub mode does not support:</p><ul>
+<li>Non zero idle timeouts for synchronous calls</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md27"></a>
+Known Issues</h1>
+<ul>
+<li>None</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md28"></a>
+Supported Platforms</h1>
+<p>The platforms listed here are intended to help ensure that we catch platform specific breakage prior to release.</p>
+<ul>
+<li>Ubuntu 18.04 LTS and newer LTS releases</li>
+<li>Microsoft Windows 10</li>
+<li>FreeBSD 11.3 and newer</li>
+<li>RHEL/CentOS 8</li>
+<li>OSX 10.14 and 10.15</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md29"></a>
+Platform Specific Build Notes</h3>
+<p><a href="https://travis-ci.org/getdnsapi/getdns"><img src="https://travis-ci.org/getdnsapi/getdns.png?branch=master" alt="Build Status" class="inline"/></a></p>
+<h2><a class="anchor" id="autotoc_md30"></a>
+FreeBSD</h2>
+<p>If you're using <a href="https://www.freebsd.org/">FreeBSD</a>, you may install getdns via the <a href="https://www.freshports.org/dns/getdns/">ports tree</a> by running: <code>cd /usr/ports/dns/getdns &amp;&amp; make install clean</code></p>
+<p>If you are using FreeBSD 10 getdns can be intalled via 'pkg install getdns'.</p>
+<h2><a class="anchor" id="autotoc_md31"></a>
+Ubuntu</h2>
+<p>getdns should also work on Ubuntu 16.04, however if you require IDN functionality you will have to install a recent version of libidn2 via a ppa e.g. from <a href="https://launchpad.net/~ondrej/+archive/ubuntu/php">https://launchpad.net/~ondrej/+archive/ubuntu/php</a></p>
+<p>You will also have to build Unbound from source code to provide libunbound at version &gt;= 1.5.9.</p>
+<h2><a class="anchor" id="autotoc_md32"></a>
+OSX</h2>
+<p>A self-compiled version of OpenSSL or the version installed via Homebrew is required and the options OPENSSL_ROOT_DIR, OPENSSL_CRYPTO_LIBRARY and OPENSSL_SSL_LIBRARY can be used to specify the location of the libraries. Note: If using a self-compiled version, manual configuration of certificates into /usr/local/etc/openssl/certs is required for TLS authentication to work.</p>
+<h3><a class="anchor" id="autotoc_md33"></a>
+Homebrew</h3>
+<p>If you're using <a href="http://brew.sh/">Homebrew</a>, you may run <code>brew install getdns</code>. By default, this will only build the core library without any 3rd party event loop support.</p>
+<p>To install the <a href="https://getdnsapi.net/doxygen/group__eventloops.html">event loop integration libraries</a> that enable support for libevent, libuv, and libev, run: <code>brew install getdns --with-libevent --with-libuv --with-libev</code>. All switches are optional.</p>
+<p>Note that in order to compile the examples, the <code>--with-libevent</code> switch is required.</p>
+<p>Additionally, getdns is linked against the the OpenSSL library installed by Homebrew. Note that the Homebrew OpenSSL installation clones the Keychain certificates to the default OpenSSL location so TLS certificate authentication should work out of the box.</p>
+<h2><a class="anchor" id="autotoc_md34"></a>
+Microsoft Windows 10</h2>
+<p>You will need CMake for Windows. Installers can be downloaded from <a href="https://cmake.org/download/">https://cmake.org/download/</a>.</p>
+<p>Windows versions of the following libraries are available using <a href="https://docs.microsoft.com/en-us/cpp/build/vcpkg">the vcpkg package manager</a>.</p>
+<ul>
+<li>OpenSSL</li>
+<li>libevent</li>
+<li>libiconv (required for libidn2)</li>
+<li>libidn2</li>
+<li>libyaml</li>
+<li>libuv</li>
+</ul>
+<p>Once these are installed, set CMake variables CMAKE_INCLUDE_PATH and CMAKE_LIBRARY_PATH to the vcpkg include and library directories e.g. <code>../vcpkg/installed/x64-windows/include</code> and <code>../vcpkg/installed/x64-windows/lib</code>.</p>
+<p>To generate a project suitable for use in Visual Studio, select the appropriate Visual Studio generator in CMake. Once generated, the cmake-gui Open Project button can be used to load the project into Visual Studio.</p>
+<h3><a class="anchor" id="autotoc_md35"></a>
+Limitations on Windows</h3>
+<p>Full support for Windows is a work in progress. The following limitations will be addresses in future:</p>
+<ul>
+<li>At present, no native Windows DLL version of libunbound exists; support for linking against libunbound is not currently available. The default build option for ENABLE_STUB_ONLY_ is ON for Windows.</li>
+<li>The getdns unit tests (built with <code>make test</code>) require libcheck which is not currently available for Windows and so cannot be built.</li>
+<li>The getdns tpkg test suite is not currently supported on Windows.</li>
+<li>The detection of the location of the <code>/etc/hosts</code> file should be optimised - it currently assumes Windows is installed in the default directory on the C: drive</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md36"></a>
+Contributors</h1>
+<ul>
+<li>Claus Assman</li>
+<li>Theogene Bucuti</li>
+<li>Andrew Cathrow, Verisign Labs</li>
+<li>Neil Cook</li>
+<li>Saúl Ibarra Corretgé</li>
+<li>Craig Despeaux, Verisign, Inc.</li>
+<li>John Dickinson, Sinodun</li>
+<li>Sara Dickinson, Sinodun</li>
+<li>Robert Edmonds</li>
+<li>Angelique Finan, Verisign, Inc.</li>
+<li>Simson Garfinkel</li>
+<li>Daniel Kahn Gillmor</li>
+<li>Neel Goyal, Verisign, Inc.</li>
+<li>Bryan Graham, Verisign, Inc.</li>
+<li>Robert Groenenberg</li>
+<li>Jim Hague, Sinodun</li>
+<li>Paul Hoffman</li>
+<li>Scott Hollenbeck, Verising, Inc.</li>
+<li>Christian Huitema</li>
+<li>Shumon Huque, Verisign Labs</li>
+<li>Jelte Janssen</li>
+<li>Guillem Jover</li>
+<li>Shane Kerr</li>
+<li>Anthony Kirby</li>
+<li>Olaf Kolkman, NLnet Labs</li>
+<li>Sanjay Mahurpawar, Verisign, Inc.</li>
+<li>Allison Mankin, Verisign, Inc. - Verisign Labs.</li>
+<li>Sai Mogali, Verisign, Inc.</li>
+<li>Linus Nordberg</li>
+<li>Benno Overeinder, NLnet Labs</li>
+<li>Joel Purra</li>
+<li>Tom Pusateri</li>
+<li>Prithvi Ranganath, Verisign, Inc.</li>
+<li>Hoda Rohani, NLnet Labs</li>
+<li>Rushi Shah, Verisign, Inc.</li>
+<li>Vinay Soni, Verisign, Inc.</li>
+<li>Melinda Shore, No Mountain Software LLC</li>
+<li>Bob Steagall, Verisign, Inc.</li>
+<li>Andrew Sullivan</li>
+<li>Ondřej Surý</li>
+<li>Willem Toorop, NLnet Labs</li>
+<li>Gowri Visweswaran, Verisign Labs</li>
+<li>Wouter Wijngaards, NLnet Labs</li>
+<li>Glen Wiley, Verisign, Inc.</li>
+<li>Paul Wouters</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md37"></a>
+Acknowledgements</h1>
+<p>The development team explicitly acknowledges Paul Hoffman for his initiative and efforts to develop a consensus based DNS API. We would like to thank the participants of the getdns-api mailing list (discontinued) for their contributions. </p>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+
+<!-- HTML footer for doxygen 1.8.11-->
+<!-- start footer part -->
+</div>
+</div>
+</div>
+</div>
+<!--#if expr="true" --><!--#include virtual="/doxygen-templates/footer-content.html" --><!--#else -->
+<nav class="navbar navbar-default navbar-static-bottom">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bottom-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div id="bottom-navbar" class="navbar-collapse collapse">
+    <div class="navbar-left social-bar">
+       <a href="https://github.com/getdnsapi/getdns"><img src="/static/github.png"></a>
+       <a href="https://repology.org/metapackage/getdns/versions"><img src="/static/repology.png"></a>
+       <a href="https://twitter.com/getdnsapi"><img src="/static/twitter.png"></a>
+       <a href="mailto:team@getdnsapi.net"><img src="/static/at.png"></a>
+    </div>
+    <p class="navbar-text navbar-right">&copy; Copyright 2017 by the <a class="navbar-link" href="mailto:team@getdnsapi.net">getdns team</a>.</p>
+    <ul class="nav navbar-nav navbar-right">
+          <li class="nav-item ">
+            <a class="nav-link" href="../../blog/">All posts</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="../../bindings/">All bindings</a>
+          </li>
+          <li class="nav-item dropup">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="../../contact/">Contact<span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li class="nav-item ">
+                  <a class="nav-link" href="https://github.com/getdnsapi/getdns/issues">Submit a bug report</a>
+              </li>
+              <li class="nav-item ">
+                  <a class="nav-link" href="https://www.mailmanlists.net/">Mailing lists are hosted by MailmanLists</a>
+              </li>
+              <li class="nav-item ">
+                  <a class="nav-link" href="https://lists.getdnsapi.net/mailman/listinfo/users">Subscribe to the users mailing-list</a>
+              </li>
+              <li class="nav-item ">
+                  <a class="nav-link" href="mailto:team@getdnsapi.net">Email us: team@getdnsapi.net</a>
+              </li>
+            </ul>
+          </li>
+    </ul>
+    </div>
+  </div>
+</nav>
+<!--#endif -->
+</div>
+  <script type=text/javascript src="../../static/gen/app.js?h=9803168c" charset="utf-8"></script>
+  <script type="text/javascript" src="doxy-boot.js"></script>
+</body>
+</html>
