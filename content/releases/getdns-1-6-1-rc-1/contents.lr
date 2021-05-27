@@ -1,0 +1,69 @@
+version: 1.6.1-rc.1
+---
+title: First release candidate for getdns-1.6.1
+---
+announcement:
+
+Dear all,
+
+We have a first candidate for the 1.6.1 release of getdns.
+
+This release has a [Stubby] version 0.4.0-rc.1 included.
+
+Please review these release candidates carefully, if all is well, the actual release will follow Friday the 4th of June.
+
+<p class="origin-reference">Photo still from Frankenstein (1931 film)</p>
+
+[CMake]: https://cmake.org
+[context]: /documentation/spec/#16-setting-up-the-dns-context
+[Stubby]: https://dnsprivacy.org/wiki/display/DP/DNS+Privacy+Daemon+-+Stubby
+[`stubby.yml`]: https://raw.githubusercontent.com/getdnsapi/stubby/release/0.2.3/stubby.yml.example
+[`getdns_context_set_tls_ciphersuites()`]: /functions/getdns_context_set_tls_ciphersuites.html
+[`getdns_context_set_tls_min_version()`]: /functions/getdns_context_set_tls_min_version.html
+[`getdns_context_set_tls_max_version()`]: /functions/getdns_context_set_tls_max_version.html
+[`getdns_context_set_trust_anchors_backoff_time()`]: /functions/getdns_context_set_trust_anchors_backoff_time.html
+[zero configuration DNSSEC]: /releases/getdns-1-2-0/#zero-configuration-dnssec
+[logging system]: /functions/getdns_context_set_logfunc.html
+---
+_discoverable: yes
+---
+date: 2021-05-28
+---
+teaser: It's Alive
+---
+image: lab-pic-6_edit_800x_55q.jpg
+---
+changelog:
+
+* 2021-05-28: Version 1.6.1-rc.1
+  * Make TLS Handshake timeout max 4/5th of timeout for the query,
+    just like connection setup timeout was, so fallback transport
+    have a chance too when TCP connection setup is less well
+    detectable (as with TCP_FASTOPEN on MacOS).
+  * Issue #466: Memory leak with retrying queries (for examples
+    with search paths). Thanks doublez13.
+  * Issue #480: Cross compiling is broken with CMake
+  * Setting of the number of milliseconds send data may remain
+    unacknowledged by the peer in a TCP connection (when supported 
+    by the OS) with getdns_context_set_tcp_send_timeout()
+    Thanks maciejsszmigiero.
+  * Issue #497: Fix typo in CMAKE included files, so Stubby can use
+    TLS v1.3 with chipersuites options ON. Thanks har-riz.
+
+---
+stubbychangelog:
+
+* 2021-05-28: Version 0.4.0-rc1
+  * Add ability to run Stubby as a full Windows service
+  * Update IPs for dot1.applied-privacy.net
+  * Remove the secure.eu entries in the stubby config file
+  * Bugfix: Make `run_in_foreground = 1` the default again
+  * Support yaml config files that do not use quotes
+---
+sha256: d6075515059289319ec269608badb9abc98ddce55520e54ea0bdd696f95d8883
+---
+tags: 
+---
+_hidden: no
+---
+archive: no
