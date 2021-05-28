@@ -6,11 +6,30 @@ announcement:
 
 Dear all,
 
-We have a first candidate for the 1.7.0 release of getdns.
+We finally have a first candidate for a new 1.7.0 release of getdns.
+Sorry that this has taken so long.
+We promise that a next release will not take this long again.
+In fact, from now on we are committing ourselves to do new releases at least every three months.
+You can hold us to that!
 
-Here is a reference to a new function: [`getdns_context_set_tcp_send_timeout()`]
+This release has a [Stubby] version 0.4.0-rc.1 included with updated upstreams servers in the example [`stubby.yml`](https://raw.githubusercontent.com/getdnsapi/stubby/release/0.4.0/stubby.yml.example) config file.
 
-This release has a [Stubby] version 0.4.0-rc.1 included.
+**Warning!** We will retire the `dnsovertls*.sinodun.com` servers later this year.
+The current example [`stubby.yml`](https://raw.githubusercontent.com/getdnsapi/stubby/release/0.4.0/stubby.yml.example) config file has `dnsovertls.sinonodun.com` and `dnsovertls1.sinodun.com` as default DNS-over-TLS upstreams (next to `getdnsapi.net`), but they will be excluded from the config in the next release.
+We are considering other options as the default upstream servers and we welcome feedback and input from **you** in this [github issue](https://github.com/getdnsapi/stubby/issues/286).
+
+With the introduction of [CMake] as our new build system a few bugs have crept in.
+This getdns release has those corrected.
+Most notably:
+  * TLS1.3 cipher suites can now be configured again, either at [context] level with the [`getdns_context_set_tls_ciphersuites()`] function, or at upstream level by specifying a `tls_ciphersuites` entry.
+  * The eventloop extension libraries have their old names again: `libgetdns_ext_event`, `libgetdns_ext_ev` and `libgetdns_ext_uv`.
+
+Besides these (and some other) bugfixes, this release has work included to improve user experience when falling back to other transports or upstreams after failure:
+  * Limiting the time a TLS Handshake may take to 4/5th of the query timeout.
+  * Setting of the number of milliseconds send data may remain unacknowledged by the peer in a TCP connection (when supported by the OS) with the [`getdns_context_set_tcp_send_timeout()`].
+    Contributed by [maciejsszmigiero](https://github.com/getdnsapi/getdns/pull/484) Thanks Maciej!
+
+Also, people that had problems with truncated packets or too large packets from [Stubby], may have less issues because smaller responses are returned thanks to the name-compression contribution from [amialkow](https://github.com/getdnsapi/getdns/pull/508). Thanks Andy!
 
 Please review these release candidates carefully, if all is well, the actual release will follow Friday the 4th of June.
 
@@ -74,7 +93,7 @@ stubbychangelog:
   * Bugfix: Make `run_in_foreground = 1` the default again
   * Support yaml config files that do not use quotes
 ---
-sha256: 2a0cd9915c239b732500e35d41faea6bbaf633fbfbc6ce81d32f3741b2bee63d
+sha256: 0468253d8aa702e08d78fee34835aa07c4b6a1c433b9fa9b0f54318729c35367
 ---
 tags: 
 ---
