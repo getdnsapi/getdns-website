@@ -8,7 +8,7 @@
     "css-loader": "^2.1.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.11.2",
-    "jquery": "^3.4.0",
+    "jquery": "^3.5.0",
     "mime": "^1.4.1",
     "node-sass": "^4.13.1",
     "sass-loader": "^4.1.1",
