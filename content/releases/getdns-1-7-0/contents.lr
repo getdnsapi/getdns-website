@@ -1,18 +1,18 @@
-version: 1.7.0-rc.1
+version: 1.7.0
 ---
-title: First release candidate for getdns-1.7.0
+title: getdns-1.7.0 release
 ---
 announcement:
 
 Dear all,
 
-We finally have a first candidate for a new 1.7.0 release of getdns.
+It's alive!  We finally have a new 1.7.0 release of getdns.
 Sorry that this has taken so long.
 We promise that a next release will not take this long again.
 In fact, from now on we are committing ourselves to do new releases at least every three months.
 You can hold us to that!
 
-This release has a [Stubby] version 0.4.0-rc.1 included with updated upstreams servers in the example [`stubby.yml`](https://raw.githubusercontent.com/getdnsapi/stubby/release/0.4.0/stubby.yml.example) config file.
+This release has [Stubby] version 0.4.0 included with updated upstreams servers in the example [`stubby.yml`](https://raw.githubusercontent.com/getdnsapi/stubby/release/0.4.0/stubby.yml.example) config file.
 
 **Warning!** We will retire the `dnsovertls*.sinodun.com` servers later this year.
 The current example [`stubby.yml`](https://raw.githubusercontent.com/getdnsapi/stubby/release/0.4.0/stubby.yml.example) config file has `dnsovertls.sinonodun.com` and `dnsovertls1.sinodun.com` as default DNS-over-TLS upstreams (next to `getdnsapi.net`), but they will be excluded from the config in the next release.
@@ -31,8 +31,6 @@ Besides these (and some other) bugfixes, this release has work included to impro
 
 Also, people that had problems with truncated packets or too large packets from [Stubby], may have less issues because smaller responses are returned thanks to the name-compression contribution from [amialkow](https://github.com/getdnsapi/getdns/pull/508). Thanks Andy!
 
-Please review these release candidates carefully, if all is well, the actual release will follow Friday the 4th of June.
-
 <p class="origin-reference">Photo still from Frankenstein (1931 film)</p>
 
 [CMake]: https://cmake.org
@@ -50,7 +48,7 @@ Please review these release candidates carefully, if all is well, the actual rel
 ---
 _discoverable: yes
 ---
-date: 2021-05-28
+date: 2021-06-04
 ---
 teaser: It's Alive
 ---
@@ -58,7 +56,7 @@ image: lab-pic-6_edit_800x_55q.jpg
 ---
 changelog:
 
-* 2021-06-??: Version 1.7.0
+* 2021-06-04: Version 1.7.0
   * Make TLS Handshake timeout max 4/5th of timeout for the query,
     just like connection setup timeout was, so fallback transport
     have a chance too when TCP connection setup is less well
@@ -80,10 +78,11 @@ changelog:
     #320 .
   * Eventloop extensions back to the old names libgetdns_ext_event,
     libgetdns_ext_ev and libgetdns_ext_uv.
+  * Compilation warning fixes. Thanks Andreas!
 ---
 stubbychangelog:
 
-* 2021-06-??: Version 0.4.0
+* 2021-06-04: Version 0.4.0
   * We announce the intention to remove the dnsovertls*.sinodun.com 
     servers from the default resolver list in the next release,
     see https://github.com/getdnsapi/stubby/issues/286 for details.
@@ -93,10 +92,10 @@ stubbychangelog:
   * Bugfix: Make `run_in_foreground = 1` the default again
   * Support yaml config files that do not use quotes
 ---
-sha256: 0468253d8aa702e08d78fee34835aa07c4b6a1c433b9fa9b0f54318729c35367
+sha256: ea8713ce5e077ac76b1418ceb6afd25e6d4e39e9600f6f5e81d3a3a13a60f652
 ---
 tags: 
 ---
-_hidden: yes
+_hidden: no
 ---
-archive: yes
+archive: no

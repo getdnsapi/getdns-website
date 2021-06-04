@@ -24,7 +24,7 @@ def new_release(tag):
 	global repo
 
 	dn  = 'content/releases/getdns-' + tag[1:].replace('.', '-')
-	with file(dn + '/contents.lr') as f:
+	with open(dn + '/contents.lr') as f:
 		contents = parse_lektor(f.read())
 	version = contents['version']
 	dversion = contents['version'].replace('.', '-')
@@ -44,7 +44,7 @@ sha256  | %s
 		              + 'src="https://getdnsapi.net/releases/getdns-%s/%s">\n\n' \
 		              % (dversion, image180)
 
-	with tempfile.NamedTemporaryFile() as f:
+	with tempfile.NamedTemporaryFile(mode = 'w') as f:
 		f.write(contents['announcement']
 		       .replace(']: /', ']: https://getdnsapi.net/')
 		       .replace('](/' , '](https://getdnsapi.net/')
@@ -53,7 +53,9 @@ sha256  | %s
 		tmpfn = f.name
 		f.flush()
 		f.seek(0)
-		announcement += subprocess.check_output(['pandoc', '-f', 'markdown', '-t', 'markdown', '--wrap', 'preserve'], stdin=f).replace(' &gt; ', '\n    > ')
+		pandoc_out = subprocess.check_output(['pandoc', '-f', 'markdown', '-t', 'markdown', '--wrap', 'preserve'], stdin=f)
+		pandoc_out = pandoc_out.replace(b' &gt; ', b'\n    > ')
+		announcement += pandoc_out.decode('utf-8')
 
 	announcement += "\n### ChangeLog\n\n```\n%s\n```\n" % contents['changelog']
 	if 'stubbychangelog' in contents and contents['stubbychangelog'].strip():
@@ -66,42 +68,44 @@ sha256  | %s
 	else:
 		raise(Exception('No title!'))
 
+	print(tag, title)
+	print(announcement)
 	rel = repo.create_release( tag_name = tag
 	                         , name = title
 	                         , body = announcement
 	                         , draft = True
 	                         , prerelease = 'rc' in version
 	                         )
-	with file(dn + '/getdns-%s.tar.gz' % version) as f:
+	with open(dn + '/getdns-%s.tar.gz' % version) as f:
 		rel.upload_asset( content_type = 'application/gzip'
 		                , name = 'getdns-%s.tar.gz' % version
 		                , asset = f
 		                )
-	with file(dn + '/getdns-%s.tar.gz.asc' % version) as f:
+	with open(dn + '/getdns-%s.tar.gz.asc' % version) as f:
 		rel.upload_asset( content_type = 'test/plain'
 		                , name = 'getdns-%s.tar.gz.asc' % version
 		                , asset = f
 		                )
 
 # using username and password
-with file(os.environ.get('HOME', '~') + '/.github/auth') as f:
+with open(os.environ.get('HOME', '~') + '/.github/auth') as f:
 	g = github3.login(*[x.strip() for x in f.read().strip().split()[:2]])
 
 repo = g.repository('getdnsapi', 'getdns')
 rels = dict()
 
-for rel in repo.iter_releases():
+for rel in repo.releases():
 	rels[rel.tag_name] = rel
 
-for tag in repo.iter_tags():
+for tag in repo.tags():
 	if not tag.name.startswith('v'):
 		continue
 	if tag.name in rels:
-		print 'update', rels[tag.name]
+		print('update', rels[tag.name])
 	elif not os.path.exists('content/releases/getdns-%s/contents.lr' % tag.name[1:].replace('.', '-')):
-		print 'skipping content/releases/getdns-%s/contents.lr' % tag.name[1:].replace('.', '-')
+		print('skipping content/releases/getdns-%s/contents.lr' % tag.name[1:].replace('.', '-'))
 		continue
 	else:
-		print 'new release for', tag.name
+		print('new release for', tag.name)
 		new_release(tag.name)
 		break
