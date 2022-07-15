@@ -5,11 +5,12 @@ title: Welcome to getdns!
 features:
 
 #### feature ####
-title: Download the 1.7.0 release
+title: Download 1.7.0
 ----
 text:
+#### **[Stay tuned for a new release expected August 2022!](blog/new-release-coming-soon/)**
 
-The latest source code tarball is available for download  with checksum [here](releases/).
+Or download the latest source code tarball with checksum [here](releases/).
 
 [![Packaging status](https://repology.org/badge/tiny-repos/getdns.svg)](https://repology.org/metapackage/getdns)
 ----
@@ -23,7 +24,7 @@ text: Stubby is a DNS Privacy enabled stub resolver. It is currently suitable fo
 ----
 image: stubby.png
 ----
-link: https://dnsprivacy.org/wiki/x/JYAT
+link: https://dnsprivacy.org/dns_privacy_daemon_-_stubby/
 #### feature ####
 title: Do a Query
 ----
