@@ -14,7 +14,7 @@ This release has a [Stubby] version 0.4.1-rc.1 included with updated upstreams s
 **NOTE!** The `dnsovertls*.sinodun.com` servers will retire later this month so we strongly encourage you to update the config file with the new default upstream servers and choose (uncomment) some additional servers from the list available.
 The getdnsapi.net server is the only default resolver left and is a single point of failure if no other resolvers are chosen.
 
-Please review these release candidates carefully, if all is well, the actual release will follow Friday the 4th of June.
+Please review these release candidates carefully, if all is well, the actual release will follow Friday the 19th of August 2022.
 
 <p class="origin-reference">Photo CC0 Public Domain from <a href="https://pxhere.com/en/photo/736196?utm_content=clipUser&utm_medium=referral&utm_source=pxhere">PxHere</a></p>
 
