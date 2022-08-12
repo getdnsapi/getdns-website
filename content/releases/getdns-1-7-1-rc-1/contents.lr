@@ -1,0 +1,84 @@
+version: 1.7.1-rc.1
+---
+title: First release candidate for getdns-1.7.1
+---
+announcement:
+
+Dear all,
+
+We have a first candidate for a new 1.7.1 release of getdns.
+This is a bugfix with most prominently a fix for a crash that occured when looking up and DNSSEC validating certain RR types.
+
+This release has a [Stubby] version 0.4.1-rc.1 included with updated upstreams servers in the example [`stubby.yml`](https://raw.githubusercontent.com/getdnsapi/stubby/release/0.4.1/stubby.yml.example) config file.
+
+**NOTE!** The `dnsovertls*.sinodun.com` servers will retire later this month so we strongly encourage you to update the config file with the new default upstream servers and choose (uncomment) some additional servers from the list available.
+The getdnsapi.net server is the only default resolver left and is a single point of failure if no other resolvers are chosen.
+
+Please review these release candidates carefully, if all is well, the actual release will follow Friday the 4th of June.
+
+<p class="origin-reference">Photo still from Frankenstein (1931 film)</p>
+
+[CMake]: https://cmake.org
+[context]: /documentation/spec/#16-setting-up-the-dns-context
+[Stubby]: https://dnsprivacy.org/wiki/display/DP/DNS+Privacy+Daemon+-+Stubby
+[`stubby.yml`]: https://raw.githubusercontent.com/getdnsapi/stubby/release/0.2.3/stubby.yml.example
+[`getdns_context_set_tls_ciphersuites()`]: /functions/getdns_context_set_tls_ciphersuites.html
+[`getdns_context_set_tls_min_version()`]: /functions/getdns_context_set_tls_min_version.html
+[`getdns_context_set_tls_max_version()`]: /functions/getdns_context_set_tls_max_version.html
+[`getdns_context_set_trust_anchors_backoff_time()`]: /functions/getdns_context_set_trust_anchors_backoff_time.html
+[zero configuration DNSSEC]: /releases/getdns-1-2-0/#zero-configuration-dnssec
+[logging system]: /functions/getdns_context_set_logfunc.html
+[`getdns_context_set_tcp_send_timeout()`]: /functions/getdns_context_set_tcp_send_timeout.html
+[`getdns_context_get_tcp_send_timeout()`]: /functions/getdns_context_get_tcp_send_timeout.html
+---
+_discoverable: yes
+---
+date: 2022-08-12
+---
+teaser: Updated upstreams
+---
+image: mountain-dog-france-mammal-barrel-spaniel-736196-pxhere.com.jpg
+---
+changelog:
+
+* 2022-08-??: Version 1.7.1
+  * Always send the `dot` ALPN when using DoT
+  * Strengthen version determination for Libidn2 during cmake processing (thanks
+    jpbion).
+  * Fix for issue in UDP stream selection in case of timeouts.
+    Thanks Shikha Sharma
+  * Fix using asterisk in ipstr for any address. Thanks uzlonewolf.
+  * Issue stubby#295: rdata not correctly written for validation for certain 
+    RR type. Also, set default built type to RelWithDebInfo and expose CFLAGS
+    via GETDNS_BUILD_CFLAGS define and via getdns_context_get_api_information()
+---
+stubbychangelog:
+
+* 2022-08-: Version 0.4.1
+  * Several updates to the servers in the config file:
+     * sinodun.dnsovertls*.com servers are removed and will be decommissioned in
+       the near future. This leaves only the the getdns.api server as the default.
+       A recommendation is made that users choose additional servers from the
+       list available.
+     * Additional Quad9 servers added (thanks pataquets).
+     * LDN servers removed as the service is now stopped. 
+     * Tidy up of remaining server data.
+     * Change `comment` lines on Uncensored server data to more clearly be comments
+       (not valid YAML)
+     * Fix and improve descriptions of default values
+  * Fixes for parsing of quoted key values for `tls-ca-file`, `tls-curves-list`
+    and `resolvconf`
+  * Add Dockerfile into `contrib` - thanks to pataquets.
+  * Strengthen version checking for LibIDN2 during the cmake step so LibIDN2
+    version 2.3.3 can be properly found (thanks jpbion).
+  * Updated systemd/stubby.service file. Thanks Bruno Pagani
+  * log level configurable in config file with log_level setting
+    Command line setting (with -v or -l) overrules the config file setting
+---
+sha256: 9bf209c38ae5e252e07b981858a614250f1dc920118a974c8d405d42347a69bc
+---
+tags: 
+---
+_hidden: no
+---
+archive: no

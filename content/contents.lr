@@ -5,12 +5,10 @@ title: Welcome to getdns!
 features:
 
 #### feature ####
-title: Download 1.7.0
+title: Download 1.7.1 release candidate
 ----
 text:
-#### **[Stay tuned for a new release expected August 2022!](blog/new-release-coming-soon/)**
-
-Or download the latest source code tarball with checksum [here](releases/).
+Download the latest source code tarball with checksum [here](releases/).
 
 [![Packaging status](https://repology.org/badge/tiny-repos/getdns.svg)](https://repology.org/metapackage/getdns)
 ----
