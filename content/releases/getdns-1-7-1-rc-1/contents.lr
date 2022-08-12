@@ -16,7 +16,7 @@ The getdnsapi.net server is the only default resolver left and is a single point
 
 Please review these release candidates carefully, if all is well, the actual release will follow Friday the 4th of June.
 
-<p class="origin-reference">Photo still from Frankenstein (1931 film)</p>
+<p class="origin-reference">Photo CC0 Public Domain from <a href="https://pxhere.com/en/photo/736196?utm_content=clipUser&utm_medium=referral&utm_source=pxhere">PxHere</a></p>
 
 [CMake]: https://cmake.org
 [context]: /documentation/spec/#16-setting-up-the-dns-context
