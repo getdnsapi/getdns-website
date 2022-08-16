@@ -16,7 +16,6 @@
     "webpack-cli": "^4.10.0"
   },
   "dependencies": {
-    "mini-css-extract-plugin": "^2.6.1",
-    "url-loader": "^4.1.1"
+    "mini-css-extract-plugin": "^2.6.1"
   }
 }
