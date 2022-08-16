@@ -9,7 +9,6 @@
     "file-loader": "^6.2.0",
     "jquery": "^3.5.0",
     "mime": "^1.4.1",
-    "node-sass": "^7.0.1",
     "sass-loader": "^10.3.1",
     "style-loader": "^3.3.1",
     "webpack": "^5.74.0",
@@ -17,6 +16,7 @@
   },
   "dependencies": {
     "@babel/core": "^7.18.10",
-    "mini-css-extract-plugin": "^2.6.1"
+    "mini-css-extract-plugin": "^2.6.1",
+    "sass": "^1.54.4"
   }
 }
