@@ -1,6 +1,6 @@
 var webpack = require('webpack');
 var path = require('path');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 
 var options = {
@@ -12,42 +12,39 @@ var options = {
     path: path.dirname(__dirname) + '/assets/static/gen',
     filename: '[name].js'
   },
-  devtool: '#cheap-module-source-map',
+  devtool: 'source-map',
+  mode: 'production',
   resolve: {
-    modulesDirectories: ['node_modules', 'js'],
-    extensions: ['', '.js'],
+    modules: ['node_modules', 'js'],
+    extensions: ['.js'],
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader'
+        use: ["babel-loader"],
       },
       {
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract('style-loader', 'css-loader!sass-loader')
+        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
       {
-        test: /\.woff2?$|\.ttf$|\.eot$|\.svg$|\.png|\.jpe?g\|\.gif$/,
-        loader: 'file'
-      }
-    ]
+        test: /\.(woff2?|ttf|eot|svg|png|jpe?g|gif)$/,
+        use: ["file-loader"],
+      },
+    ],
   },
   plugins: [
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery'
     }),
-    new ExtractTextPlugin('styles.css', {
-      allChunks: true
-    }),
-    new webpack.optimize.UglifyJsPlugin(),
-    new webpack.optimize.DedupePlugin()
+    new MiniCssExtractPlugin({ filename: "styles.css" })
   ]
 };
 
