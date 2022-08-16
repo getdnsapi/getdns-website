@@ -13,7 +13,7 @@ var options = {
     filename: '[name].js'
   },
   devtool: 'source-map',
-  mode: 'production',
+  mode: 'development',
   resolve: {
     modules: ['node_modules', 'js'],
     extensions: ['.js'],
