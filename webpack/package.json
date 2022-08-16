@@ -1,7 +1,7 @@
 {
   "private": true,
   "devDependencies": {
-    "babel-core": "^6.26.3",
+    "babel-core": "^7.0.0-bridge.0",
     "babel-loader": "^8.2.5",
     "bootstrap": "3.4.1",
     "bootstrap-sass": "3.4.1",
@@ -16,6 +16,7 @@
     "webpack-cli": "^4.10.0"
   },
   "dependencies": {
+    "@babel/core": "^7.18.10",
     "mini-css-extract-plugin": "^2.6.1"
   }
 }
