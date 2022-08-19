@@ -1,20 +1,22 @@
-version: 1.7.1
+version: 1.7.2
 ---
-title: getdns-1.7.1 release
+title: getdns-1.7.2 release
 ---
 announcement:
 
 Dear all,
 
-We have a new 1.7.1 release of getdns.
-This is mostly a bugfix release with most prominently a fix for a crash that occured when looking up and DNSSEC validating certain RR types.
+We have a new 1.7.2 quickfix release of getdns.
+Version 1.7.1. contained a version of [Stubby] that would fail to start with config files missing the new `log_level` setting.
+The version 0.4.2 of [Stubby] included in this version has this resolved.
+Compared to version 1.7.0 and Stubby version 0.4.0 this is mostly a bugfix release with most prominently a fix for a crash that occured when looking up and DNSSEC validating certain RR types.
 
-This release has a [Stubby] version 0.4.1 included with updated upstreams servers in the example [`stubby.yml`](https://raw.githubusercontent.com/getdnsapi/stubby/release/0.4.1/stubby.yml.example) config file.
+This release has a [Stubby] version 0.4.2 included with updated upstreams servers in the example [`stubby.yml`](https://raw.githubusercontent.com/getdnsapi/stubby/release/0.4.1/stubby.yml.example) config file.
 
 **NOTE!** The `dnsovertls*.sinodun.com` servers will retire later this month so we strongly encourage you to update the config file with the new default upstream servers and choose (uncomment) some additional servers from the list available.
 The getdnsapi.net server is the only default resolver left and is a single point of failure in your setup if no other resolvers are chosen.
 
-<p class="origin-reference">Photo CC0 Public Domain from <a href="https://pxhere.com/en/photo/611074?utm_content=clipUser&utm_medium=referral&utm_source=pxhere">PxHere</a></p>
+<p class="origin-reference">Photo CC BY-SA 3.0 by <a title="BKP, CC BY-SA 3.0 &lt;https://creativecommons.org/licenses/by-sa/3.0&gt;, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:A_St._Bernard_dog_with_barrel.JPG">BKP via Wikimedia Commons</a></p>
 
 [CMake]: https://cmake.org
 [context]: /documentation/spec/#16-setting-up-the-dns-context
@@ -35,9 +37,11 @@ date: 2022-08-19
 ---
 teaser: Updated upstreams and ALPN support
 ---
-image: dog-animal-mammal-alpine-tourism-barrel-611074-pxhere.com.jpg
+image: A_St._Bernard_dog_with_barrel.jpeg
 ---
 changelog:
+* 2022-08-19: Version 1.7.2
+  * Stubby updated to 0.4.2 quickfix release
 
 * 2022-08-19: Version 1.7.1
   * Always send the `dot` ALPN when using DoT
@@ -58,6 +62,9 @@ changelog:
     Thanks Katze Prior.
 ---
 stubbychangelog:
+* 2022-08-19: version 0.4.2
+  * Fix Issue #320: Stubby doesn't start without "log_level"
+    entry. Thanks Johnny S. Lee
 
 * 2022-08-19: Version 0.4.1
   * Several updates to the servers in the config file:
@@ -84,10 +91,10 @@ stubbychangelog:
     setting
 
 ---
-sha256: 5aa3be54179fc14cfac4ca64da168700305d869ec38a944f538e0753e7317359
+sha256: db89fd2a940000e03ecf48d0232b4532e5f0602e80b592be406fd57ad76fdd17
 ---
 tags: 
 ---
-_hidden: yes
+_hidden: no
 ---
-archive: yes
+archive: no
