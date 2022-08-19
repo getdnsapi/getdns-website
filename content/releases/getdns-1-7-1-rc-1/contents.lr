@@ -79,6 +79,6 @@ sha256: 9bf209c38ae5e252e07b981858a614250f1dc920118a974c8d405d42347a69bc
 ---
 tags: 
 ---
-_hidden: no
+_hidden: yes
 ---
-archive: no
+archive: yes
