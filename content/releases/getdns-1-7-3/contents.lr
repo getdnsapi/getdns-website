@@ -7,13 +7,16 @@ announcement:
 Dear all,
 
 We have a new 1.7.3 quickfix release of getdns.
-Version 1.7.2. contained a version of [Stubby] that had a bug in the stubby.service
+Version 1.7.2. contained a version of [Stubby] that had a bug preventing it to start on systems using systemd.
 The version 0.4.3 of [Stubby] included in this version has this resolved.
 Compared to version 1.7.0 and Stubby version 0.4.0 this is mostly a bugfix release with most prominently a fix for a crash that occured when looking up and DNSSEC validating certain RR types.
 
 This release has a [Stubby] version 0.4.3 included.
 
-We wanted to have this out of the way first, before continuing adding new things (like DoH).
+We wanted to have this out of the way first before adding new stuff (like DoH).
+
+Happy holidays eveyone!
+
 
 <p class="origin-reference">Photo by <a href="https://www.pexels.com/photo/dog-in-elf-costume-3361741/">Goochie Poochie Grooming</a></p>
 
