@@ -1,0 +1,113 @@
+version: 1.7.3
+---
+title: getdns-1.7.3 quickfix release
+---
+announcement:
+
+Dear all,
+
+We have a new 1.7.3 quickfix release of getdns.
+Version 1.7.2. contained a version of [Stubby] that had a bug in the stubby.service
+The version 0.4.3 of [Stubby] included in this version has this resolved.
+Compared to version 1.7.0 and Stubby version 0.4.0 this is mostly a bugfix release with most prominently a fix for a crash that occured when looking up and DNSSEC validating certain RR types.
+
+This release has a [Stubby] version 0.4.3 included.
+
+We wanted to have this out of the way first, before continuing adding new things (like DoH).
+
+<p class="origin-reference">Photo by <a href="https://www.pexels.com/photo/dog-in-elf-costume-3361741/">Goochie Poochie Grooming</a></p>
+
+[CMake]: https://cmake.org
+[context]: /documentation/spec/#16-setting-up-the-dns-context
+[Stubby]: https://dnsprivacy.org/wiki/display/DP/DNS+Privacy+Daemon+-+Stubby
+[`stubby.yml`]: https://raw.githubusercontent.com/getdnsapi/stubby/release/0.2.3/stubby.yml.example
+[`getdns_context_set_tls_ciphersuites()`]: /functions/getdns_context_set_tls_ciphersuites.html
+[`getdns_context_set_tls_min_version()`]: /functions/getdns_context_set_tls_min_version.html
+[`getdns_context_set_tls_max_version()`]: /functions/getdns_context_set_tls_max_version.html
+[`getdns_context_set_trust_anchors_backoff_time()`]: /functions/getdns_context_set_trust_anchors_backoff_time.html
+[zero configuration DNSSEC]: /releases/getdns-1-2-0/#zero-configuration-dnssec
+[logging system]: /functions/getdns_context_set_logfunc.html
+[`getdns_context_set_tcp_send_timeout()`]: /functions/getdns_context_set_tcp_send_timeout.html
+[`getdns_context_get_tcp_send_timeout()`]: /functions/getdns_context_get_tcp_send_timeout.html
+---
+_discoverable: yes
+---
+date: 2022-12-22
+---
+teaser: fixed systemd files for stubby
+---
+image: pexels-goochie-poochie-grooming-3361741.jpg
+---
+changelog:
+* 2022-12-22: Version 1.7.3
+  * PR #532: Increase CMake required version 3.5 -> 3.20, because we
+    need cmake_path for Absolute paths in pkg-config (See Issue #517)
+    Thanks Gabriel Ganne
+  * Updated to Stubby 0.4.3 quickfix release
+
+changelog:
+* 2022-08-19: Version 1.7.2
+  * Stubby updated to 0.4.2 quickfix release
+
+* 2022-08-19: Version 1.7.1
+  * Always send the `dot` ALPN when using DoT
+  * Strengthen version determination for Libidn2 during cmake processing
+    (thanks jpbion).
+  * Fix for issue in UDP stream selection in case of timeouts.
+    Thanks Shikha Sharma
+  * Fix using asterisk in ipstr for any address. Thanks uzlonewolf.
+  * Issue stubby#295: rdata not correctly written for validation for
+    certain RR type. Also, set default built type to RelWithDebInfo and
+    expose CFLAGS via GETDNS_BUILD_CFLAGS define and via
+    getdns_context_get_api_information()
+  * Issue #524: Bug fixes from submodules' upstream?
+    Thanks Johnnyslee
+  * Issue #517: Allow Absolute path CMAKE_INSTALL_{INCLUDE,LIB}DIR in
+    pkg-config files. Thanks Alex Shpilkin
+  * Issue #512: Update README.md to show correct PGP key location.
+    Thanks Katze Prior.
+---
+stubbychangelog:
+* 2022-12-22: version 0.4.3
+  * Fix Issue #330 and PR#324: PrivateUsers=false needed in systemd
+    stubby.service file for stubby to start.
+    Thanks Archcan and Petr Menšík
+  * PR #323: Reduce log messages when interface is offline.
+    Thanks Russ Bubley and Andre Heider 
+
+* 2022-08-19: version 0.4.2
+  * Fix Issue #320: Stubby doesn't start without "log_level"
+    entry. Thanks Johnny S. Lee
+
+* 2022-08-19: Version 0.4.1
+  * Several updates to the servers in the config file:
+     * sinodun.dnsovertls*.com servers are removed and will be
+       decommissioned in the near future. This leaves only the
+       getdnsapi.net server as the default.
+       A recommendation is made that users choose additional servers
+       from the list available.
+     * Additional Quad9 servers added (thanks pataquets).
+     * LDN servers removed as the service is now stopped. 
+     * Tidy up of remaining server data.
+     * Change `comment` lines on Uncensored server data to more clearly
+       be comments (not valid YAML)
+     * Fix and improve descriptions of default values
+     * getdnsapi.net DoT servers liston on port 443 now too
+  * Fixes for parsing of quoted key values for `tls-ca-file`,
+    `tls-curves-list` and `resolvconf`
+  * Add Dockerfile into `contrib` - thanks to pataquets.
+  * Strengthen version checking for LibIDN2 during the cmake step so
+    LibIDN2 version 2.3.3 can be properly found (thanks jpbion).
+  * Updated systemd/stubby.service file. Thanks Bruno Pagani
+  * log level configurable in config file with log_level setting
+    Command line setting (with -v or -l) overrules the config file
+    setting
+
+---
+sha256: f1404ca250f02e37a118aa00cf0ec2cbe11896e060c6d369c6761baea7d55a2c
+---
+tags: 
+---
+_hidden: no
+---
+archive: no
